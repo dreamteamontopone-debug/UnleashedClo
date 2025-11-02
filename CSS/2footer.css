@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    background-color: black;
+    height: 150px;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.logoF{
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+    height: auto;
+}

@@ -1,0 +1,267 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+    text-align: center;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+hr {
+  border: none;
+  border-top: 5px solid black;
+}
+
+/* HERO SECTION */
+/* SLIDER 1 */
+.container2, .container4{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+}
+
+/* HIDE THE RADIO BUTTON ( DUMMY ) */
+.container2 > input[type="radio"], .container4 > input[type="radio"]{
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* SLIDER LAYOUT */
+.slider1, .slider2{
+    width: 1000px;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(67, 69, 69);
+    justify-self: center;
+}
+
+.slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide, .slide2{   
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: background 1.5s ease; /*CAN CHANGE TO OPACITY*/
+}
+
+/* SLIDER IMAGES */
+.slidepicture{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    display: block;
+}
+
+/* SLIDER BUTTONS */
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.prev,.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0,0.4);
+    padding: 6px 16px;
+    border-radius: 50%;
+    transition: background 0.5s;
+}
+
+.prev:hover, .next:hover{
+    background-color: rgb(0,0,0,1);
+    transition: 1s;
+}
+
+/* RADIO NAVIGATION */
+.radionav label, .radionav2 label{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 0 5px;
+    transition: color 0.2s;
+}
+
+.radionav, .radionav2{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: rgb(208, 208, 208);
+    width: 125px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+/* SHOW SELECTED SLIDE( SHOW THE IMAGES ) */
+#s1-1:checked ~ .slider1 .s1-1,
+#s1-2:checked ~ .slider1 .s1-2,
+#s1-3:checked ~ .slider1 .s1-3,
+#s1-4:checked ~ .slider1 .s1-4,
+#s1-5:checked ~ .slider1 .s1-5{
+    opacity: 1;
+    z-index: 2;
+}
+
+#s2-1:checked ~ .slider2 .s2-1,
+#s2-2:checked ~ .slider2 .s2-2,
+#s2-3:checked ~ .slider2 .s2-3,
+#s2-4:checked ~ .slider2 .s2-4,
+#s2-5:checked ~ .slider2 .s2-5{
+    opacity: 1;
+    z-index: 2;
+}
+
+/* CHANGE THE LABEL COLOR TO BLACK BY THE SELECTED SLIDE */
+#s1-1:checked ~ .radionav label[for="s1-1"],
+#s1-2:checked ~ .radionav label[for="s1-2"],
+#s1-3:checked ~ .radionav label[for="s1-3"],
+#s1-4:checked ~ .radionav label[for="s1-4"],
+#s1-5:checked ~ .radionav label[for="s1-5"]{
+    color: black;
+}
+
+#s2-1:checked ~ .radionav2 label[for="s2-1"],
+#s2-2:checked ~ .radionav2 label[for="s2-2"],
+#s2-3:checked ~ .radionav2 label[for="s2-3"],
+#s2-4:checked ~ .radionav2 label[for="s2-4"],
+#s2-5:checked ~ .radionav2 label[for="s2-5"]{
+    color: black;
+}
+
+/* ALL PRODUCTS */
+.products img{
+    display: block;
+    width: 200px;
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+/* PRODUCTS LAYOUT 4X2 GRID */
+.productimage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    padding: 40px;
+    background-color: rgb(168, 168, 168);
+    border-radius: 20px;
+    overflow: hidden;
+    gap: 30px;
+    margin: 50px;
+}
+
+/* PRODUCT DESIGN AND ANIMATION */
+.products{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 5px 3px 5px black;
+    transition: transform 1s ease;
+    transform: scale(1);
+}
+
+.products:hover{
+    transform: scale(1.1);
+    transition: 1s ease;
+}
+
+/* MISSION AND VISION */
+
+.container5{
+    margin: 100px;
+    justify-items: center;
+}
+
+/* VIEWPORT FOR 320px ( MOBILE ) */
+@media (max-width: 320px) {
+    body {
+        text-align: center;
+    }
+
+    /* HERO SECTION / SLIDERS */
+    .container2, .container4 {
+        margin-top: 20px;
+    }
+
+    .slider1, .slider2 {
+        width: 280px; 
+        height: 200px;
+        border-radius: 20px; 
+        margin: 0 auto;
+    }
+
+    .slidepicture {
+        border-radius: 20px; 
+    }
+
+    .prev, .next {
+        font-size: 1.2rem;
+        padding: 4px 10px;
+    }
+
+    /* RADIO NAVIGATION*/
+    .radionav, .radionav2 {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        gap: 10px; 
+        margin-top: 10px; 
+    }
+    .radionav label, .radionav2 label {
+        font-size: 1rem;
+        margin: 0; 
+    }
+
+    /* ALL PRODUCTS */
+    .productimage {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+        padding: 20px; 
+        margin: 20px; 
+        gap: 15px; 
+        border-radius: 20px; 
+    }
+
+    .products img {
+        width: 150px; 
+        padding: 10px;
+        border-radius: 20px; 
+    }
+
+    .products {
+        cursor: pointer;
+        width: 220px; 
+        border-radius: 20px; 
+        box-shadow: 3px 2px 3px black;
+        overflow: hidden;
+    }
+
+    /* MISSION AND VISION */
+    .container5 {
+        margin: 50px 10px; 
+    }
+
+    .container5 h1 {
+        font-size: 1.2rem; 
+    }
+}

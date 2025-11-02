@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 1px 1px 100px black;
+}
+
+.back-button {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.8rem;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.9rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button:hover {
+    background-color: #222;
+}
+
+.logo {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.product-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    margin-top: 200px;
+    padding: 0 1rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 100px black;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    z-index: 0;
+}
+
+/* FOR OPACITY OF THE LOGO IN THE BACK */
+.product-info::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-image: url(/Images/UNLCLOBLACK.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.15;         
+    z-index: -1;           
+    pointer-events: none;
+    transform: scale(2.2);
+}
+
+.product-name {
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.size-chart-btn {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.8rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    transition: background-color 0.3s ease;
+}
+
+.size-chart-btn:hover {
+    background-color: #333;
+}
+
+/* VIEWPORT FOR 320px ( MOBILE ) */
+@media (max-width: 320px) {
+    .product-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .product-image {
+        max-width: 90vw;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+}

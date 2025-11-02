@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+
+/* BODY LAYOUT */
+.container2{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGE */
+.chart{
+    width: 900px;
+    height: 600px;
+    box-shadow: 10px 10px 70px;
+}
